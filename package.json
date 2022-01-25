@@ -1,0 +1,21 @@
+{
+  "name": "music-library",
+  "version": "1.0.0",
+  "description": "music-library-organizer",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [
+    "music",
+    "albums",
+    "library"
+  ],
+  "author": "Alexander Holden",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
