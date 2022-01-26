@@ -27,23 +27,18 @@ class App extends Component {
 
     handleCheck(e) {
         e.preventDefault();
-        console.log(this.state);
-        fetch('https://api.deezer.com/artist/27', 
-        {
-            method: 'GET',
-            headers:{
-                'content-type': 'application/json'
-            },
-            // mode: 'no-cors',
-            // redirect: 'follow'
-        }).then((data) => {
-            console.log('part way')
-            console.log(data)
-            return data.json()
+        console.log(this.state.value);
+        fetch('/api', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+          },
+        body: JSON.stringify({keyword : this.state.value})   
         })
-        .then((data) => {
+        .then((res) => res.json())
+        .then((res) => {
             console.log('success!')
-            console.log(data)
+            console.log("res", res)
         })
     }
 
