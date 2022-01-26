@@ -2,11 +2,11 @@ const path = require('path');
 // const { mainModule } = require('process');
 
 module.exports = {
-
+    mode:"production",
     entry: './src/index.js',
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+      path: path.join(__dirname, 'dist'),  
+      filename: 'bundle.js',
     },
     module: {
         rules: [
