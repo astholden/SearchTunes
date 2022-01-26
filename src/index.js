@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import styles from './style.css';
 import React from 'react';
 import App from './components/App';
