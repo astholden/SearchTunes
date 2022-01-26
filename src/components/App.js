@@ -5,14 +5,15 @@ function getInitialState() {
 
     return {
         hello: "hello",
-        howAreYou : "Good"
+        howAreYou : "Good",
+        value : ""
     }
 
 }
 
 const check = (e) => {
     e.preventDefault();
-    console.log(value)
+    console.log(this.state.value)
     // fetch('https://itunes.apple.com/search?term=jack+johnson')
     // .then((data) => data.json())
     // .then((data) => {
@@ -26,26 +27,18 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = getInitialState()
-        this.handleChange = this.handleChange.bind(this)
     };
 
 
 
-handleChange = (event) => {
-    console.log(event.target.value)
-    console.log('working')
-    this.setState({test: "test"})
-    console.log(state)
-}
-
 
 
 render () {
-
+    const change = this.state.hello
         return (
             <div>
-                <form onSubmit={check}>
-                    <input id="search-field" onChange={this.handleChange}></input>
+                <form onSubmit={console.log(change)}>
+                    <input id="search-field" onChange={(e) => this.setState({ value : e.target.value})}></input>
                     <button id="search">Search</button>
                 </form>
             </div>
