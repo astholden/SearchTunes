@@ -8,7 +8,8 @@ function getInitialState() {
     return {
         searchInfo:[],
         searched: false,
-        
+        play: false,
+        audio: "url",
         value : ""
     }
 
@@ -21,11 +22,18 @@ class App extends Component {
         super(props);
         this.state = getInitialState()
         this.handleCheck = this.handleCheck.bind(this)
+        this.changeState = this.changeState.bind(this)
     };
 
     componentDidMount() {
-        console.log(this.state)
+        console.log(this.state)    
     }
+
+    changeState () {
+        this.setState({audio : props.song.previewUrl})
+    }
+
+
 
     handleCheck(e) {
         e.preventDefault();
@@ -52,7 +60,8 @@ render () {
     const output = this.state.searchInfo.res
     console.log("this?", output)
         return (
-            <div>
+            <div id='main'>
+                <h1>Testing the React App</h1>
                 <form onSubmit={this.handleCheck}>
                     <input id="search-field" onChange={(e) => this.setState({ value : e.target.value})}></input>
                     <button id="search">Search</button>
