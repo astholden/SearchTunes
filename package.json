@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "node server/server.js"
+    "start": "node server/server.js --no-inline --hot=false"
   },
   "keywords": [
     "music",
@@ -17,6 +17,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.12",
+    "@babel/plugin-transform-async-to-generator": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
@@ -24,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.15",
     "sass": "^1.49.0",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
@@ -31,12 +34,16 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.7.1",
     "cross-fetch": "^3.1.5",
     "date-fns": "^2.28.0",
     "express": "^4.17.2",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.7",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9"
   }
 }

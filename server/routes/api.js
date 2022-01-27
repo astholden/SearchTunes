@@ -7,7 +7,7 @@ const router = express.Router();
 router.use(getMusic.searchArtist)
 
 router.post('/', (req, res) => {
-    return res.status(200).json({res : res.body})
+    return res.status(200).json(res.body)
 })
 
 
