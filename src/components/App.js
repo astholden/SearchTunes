@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
+import Display from './Display';
 
 
 function getInitialState() {
 
     mode:"development"
     return {
-        hello: "hello",
-        howAreYou : "Good",
+        searchInfo:[],
+        searched: false,
+        
         value : ""
     }
 
@@ -37,8 +39,8 @@ class App extends Component {
         })
         .then((res) => res.json())
         .then((res) => {
-            console.log('success!')
-            console.log("res", res)
+            this.setState({searchInfo : res, searched: true})
+            console.log("state", this.state)
         })
     }
 
@@ -47,12 +49,15 @@ class App extends Component {
 
 
 render () {
+    const output = this.state.searchInfo.res
+    console.log("this?", output)
         return (
             <div>
                 <form onSubmit={this.handleCheck}>
                     <input id="search-field" onChange={(e) => this.setState({ value : e.target.value})}></input>
                     <button id="search">Search</button>
                 </form>
+                {this.state.searched && <Display info={output} />}
             </div>
         )
     }
