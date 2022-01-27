@@ -1,6 +1,5 @@
 const path = require('path');
 const { mainModule } = require('process');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -10,16 +9,7 @@ module.exports = {
       filename: 'bundle.js',
     },
 
-    // plugins: [new HtmlWebpackPlugin({
-    //   template: "./index.html"
-    // })],
     module: {
-        rules: [
-          {
-            test: /\.css$/i,
-            use: ["style-loader", "css-loader"],
-          },
-        ],
         rules: [
           {
             test: /\.jsx?/,
@@ -30,6 +20,10 @@ module.exports = {
                     presets: ['@babel/preset-env', '@babel/preset-react']
                 }
             }
+          },
+          {
+            test: /\.s[ac]ss$/i,
+            use: ["style-loader", "css-loader", "sass-loader"],
           }
         ]
     },
