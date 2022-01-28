@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
 const MainContainer = props => (
 
     <div id='main'>
-        <h1>Testing the React App</h1>
+        <h1>SearchTunes</h1>
         <MusicEntryCreater 
             getMusic={props.getMusic}
             setKeyword={props.setKeyword}
