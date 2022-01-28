@@ -53,17 +53,3 @@ const Songs = props => {
 
 
 export default Songs
-
-// let audio
-// let play = false
-
-// function playMusic () {
-//     audio = new Audio(props.song.previewUrl)
-//     play = !play
-//     audio.play()
-// }
-
-// function pauseMusic () {
-//     play = !play
-//     audio.pause()
-// }
